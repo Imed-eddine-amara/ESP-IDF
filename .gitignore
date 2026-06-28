@@ -12,7 +12,8 @@
 *.swo
 *.bak
 *.tmp
-
+.vscode/
+.devcontainer/
 # Log files
 *.log
 
@@ -30,8 +31,9 @@ build/
 *.map
 flasher_args.json # Generated in build directory
 sdkconfig.old
-.vscode/
-.devcontainer/
+sdkconfig
+.vscode
+.devcontainer
 # ESP-IDF dependencies
 # For older versions or manual component management
 /components/.idf/
