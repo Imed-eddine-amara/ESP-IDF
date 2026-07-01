@@ -8,18 +8,15 @@
 
 #define THINGNAME "ESP32" // AWS IoT requires a Client ID / Thing Name
 
-static const char aws_root_ca_pem[] = R"raw(-----BEGIN CERTIFICATE-----
-put your certificate here
------END CERTIFICATE-----)raw";
 
-static const char client_crt_pem[] = R"raw(-----BEGIN CERTIFICATE-----
-put your certificate here
+//Put aws root ca1 certificat here , delete "put certificate " line and paste there , copy it all with the begin and end
+static const char aws_root_ca_pem[] = R"raw(put certificate)raw";
 
------END CERTIFICATE-----)raw";
+//put client certificate here same as before
+static const char client_crt_pem[] = R"raw(put certificate)raw";
 
-static const char client_private_key_pem[] = R"raw(-----BEGIN RSA PRIVATE KEY-----
-put your certificate here
------END RSA PRIVATE KEY-----)raw";
+//put client privvate key here same as before
+static const char client_private_key_pem[] = R"raw(put certificate)raw";
 
 static bool wifi_connected = false;
 static bool mqtt_connected = false;
@@ -179,7 +176,7 @@ void app_main(void)
     const esp_mqtt_client_config_t mqtt_cfg = {
 
         .broker.address.hostname =
-            "a3n5nypu75yfyl-ats.iot.us-east-1.amazonaws.com",
+            "", //domain name/endpoint
 
         .broker.address.port = 8883,
 
@@ -242,7 +239,7 @@ void app_main(void)
 
 
 //********************************************************************
-
+//this one use esplogi
 
 
 /*
@@ -400,7 +397,7 @@ void app_main(void)
     const esp_mqtt_client_config_t mqtt_cfg = {
 
         .broker.address.hostname =
-            "a3n5nypu75yfyl-ats.iot.us-east-1.amazonaws.com",
+            "", //domain name/endpoint
 
         .broker.address.port = 8883,
 
